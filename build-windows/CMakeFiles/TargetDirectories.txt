@@ -1,0 +1,3 @@
+/home/q/maze/build-windows/CMakeFiles/MazeGame.dir
+/home/q/maze/build-windows/CMakeFiles/edit_cache.dir
+/home/q/maze/build-windows/CMakeFiles/rebuild_cache.dir
