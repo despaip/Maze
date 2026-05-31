@@ -63,7 +63,7 @@ void Maze::removeWall(Position a, Position b) {
 }
 
 void Maze::generateMaze(int startX, int startY) {
-    Stack stack;
+    std::stack<Position> stack;
 
     stack.push({startX, startY});
     grid[startY][startX].visited = true;

@@ -1,8 +1,8 @@
 #include "Cell.hpp"
-#include "Stack.hpp"
+#include "Position.hpp"
+#include <stack>
 #include <chrono>
 #include <random>
-#include <algorithm>
 #include <SFML/Graphics.hpp>
 
 const int kMazeWidth = 40;
