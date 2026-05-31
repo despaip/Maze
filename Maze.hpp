@@ -1,5 +1,3 @@
-#include "Cell.hpp"
-#include "Position.hpp"
 #include <stack>
 #include <chrono>
 #include <random>
@@ -10,8 +8,22 @@ const int kMazeHeight = 25;
 const int kCellSize = 32;
 const float kWallSize = 4.0f;
 
+struct Position {
+    int x;
+    int y;
+};
+
 class Maze {
 private:
+
+    struct Cell {
+        bool isShowBottomWall = true;
+        bool isShowTopWall = true;
+        bool isShowRightWall = true;
+        bool isShowLeftWall = true;
+        bool visited = false;
+    };
+
     int height;
     int width;
     Cell** grid;
