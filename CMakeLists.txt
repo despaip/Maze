@@ -12,7 +12,6 @@ add_executable(MazeGame
     main.cpp
     Maze.cpp
     Interface.cpp
-    Stack.cpp
 )
 
 target_include_directories(MazeGame PRIVATE ${CURSES_INCLUDE_DIR})
