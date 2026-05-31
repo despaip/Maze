@@ -13,7 +13,7 @@ void startGame() {
         sf::VideoMode(windowWidth, windowHeight),
         "MazeGame | W A S D - move, R - restart, Esc - exit"
     );
-    window.setFramerateLimit(60);
+
 
     while (window.isOpen()) {
         sf::Event event{};

@@ -157,7 +157,6 @@ CMakeFiles/MazeGame.dir/main.cpp.o: /home/q/maze/main.cpp \
  /usr/include/c++/13/bits/basic_ios.tcc \
  /usr/include/c++/13/bits/ostream.tcc /usr/include/c++/13/istream \
  /usr/include/c++/13/bits/istream.tcc /home/q/maze/Maze.hpp \
- /home/q/maze/Cell.hpp /home/q/maze/Position.hpp \
  /usr/include/c++/13/stack /usr/include/c++/13/deque \
  /usr/include/c++/13/bits/stl_uninitialized.h \
  /usr/include/c++/13/bits/stl_deque.h /usr/include/c++/13/bits/deque.tcc \

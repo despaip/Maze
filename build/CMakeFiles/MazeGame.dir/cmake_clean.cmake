@@ -3,8 +3,6 @@ file(REMOVE_RECURSE
   "CMakeFiles/MazeGame.dir/Interface.cpp.o.d"
   "CMakeFiles/MazeGame.dir/Maze.cpp.o"
   "CMakeFiles/MazeGame.dir/Maze.cpp.o.d"
-  "CMakeFiles/MazeGame.dir/Stack.cpp.o"
-  "CMakeFiles/MazeGame.dir/Stack.cpp.o.d"
   "CMakeFiles/MazeGame.dir/main.cpp.o"
   "CMakeFiles/MazeGame.dir/main.cpp.o.d"
   "MazeGame"

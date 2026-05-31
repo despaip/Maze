@@ -1,7 +1,6 @@
 CMakeFiles/MazeGame.dir/Maze.cpp.o: /home/q/maze/Maze.cpp \
- /usr/include/stdc-predef.h /home/q/maze/Maze.hpp /home/q/maze/Cell.hpp \
- /home/q/maze/Position.hpp /usr/include/c++/13/stack \
- /usr/include/c++/13/bits/requires_hosted.h \
+ /usr/include/stdc-predef.h /home/q/maze/Maze.hpp \
+ /usr/include/c++/13/stack /usr/include/c++/13/bits/requires_hosted.h \
  /usr/include/x86_64-linux-gnu/c++/13/bits/c++config.h \
  /usr/include/x86_64-linux-gnu/c++/13/bits/os_defines.h \
  /usr/include/features.h /usr/include/features-time64.h \

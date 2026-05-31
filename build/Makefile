@@ -177,30 +177,6 @@ Maze.cpp.s:
 	$(MAKE) $(MAKESILENT) -f CMakeFiles/MazeGame.dir/build.make CMakeFiles/MazeGame.dir/Maze.cpp.s
 .PHONY : Maze.cpp.s
 
-Stack.o: Stack.cpp.o
-.PHONY : Stack.o
-
-# target to build an object file
-Stack.cpp.o:
-	$(MAKE) $(MAKESILENT) -f CMakeFiles/MazeGame.dir/build.make CMakeFiles/MazeGame.dir/Stack.cpp.o
-.PHONY : Stack.cpp.o
-
-Stack.i: Stack.cpp.i
-.PHONY : Stack.i
-
-# target to preprocess a source file
-Stack.cpp.i:
-	$(MAKE) $(MAKESILENT) -f CMakeFiles/MazeGame.dir/build.make CMakeFiles/MazeGame.dir/Stack.cpp.i
-.PHONY : Stack.cpp.i
-
-Stack.s: Stack.cpp.s
-.PHONY : Stack.s
-
-# target to generate assembly for a file
-Stack.cpp.s:
-	$(MAKE) $(MAKESILENT) -f CMakeFiles/MazeGame.dir/build.make CMakeFiles/MazeGame.dir/Stack.cpp.s
-.PHONY : Stack.cpp.s
-
 main.o: main.cpp.o
 .PHONY : main.o
 
@@ -240,9 +216,6 @@ help:
 	@echo "... Maze.o"
 	@echo "... Maze.i"
 	@echo "... Maze.s"
-	@echo "... Stack.o"
-	@echo "... Stack.i"
-	@echo "... Stack.s"
 	@echo "... main.o"
 	@echo "... main.i"
 	@echo "... main.s"
