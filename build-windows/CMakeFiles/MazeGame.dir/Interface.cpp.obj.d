@@ -131,14 +131,35 @@ CMakeFiles/MazeGame.dir/Interface.cpp.obj: /home/q/maze/Interface.cpp \
  /usr/lib/gcc/x86_64-w64-mingw32/13-win32/include/c++/bits/ostream.tcc \
  /usr/lib/gcc/x86_64-w64-mingw32/13-win32/include/c++/istream \
  /usr/lib/gcc/x86_64-w64-mingw32/13-win32/include/c++/bits/istream.tcc \
- /home/q/maze/Maze.hpp /home/q/maze/Cell.hpp /home/q/maze/Stack.hpp \
- /home/q/maze/Position.hpp \
+ /usr/lib/gcc/x86_64-w64-mingw32/13-win32/include/c++/memory \
+ /usr/lib/gcc/x86_64-w64-mingw32/13-win32/include/c++/bits/stl_tempbuf.h \
+ /usr/lib/gcc/x86_64-w64-mingw32/13-win32/include/c++/bits/stl_uninitialized.h \
+ /usr/lib/gcc/x86_64-w64-mingw32/13-win32/include/c++/bits/stl_raw_storage_iter.h \
+ /usr/lib/gcc/x86_64-w64-mingw32/13-win32/include/c++/bits/align.h \
+ /usr/lib/gcc/x86_64-w64-mingw32/13-win32/include/stdint.h \
+ /usr/share/mingw-w64/include/stdint.h \
+ /usr/lib/gcc/x86_64-w64-mingw32/13-win32/include/c++/bits/unique_ptr.h \
+ /usr/lib/gcc/x86_64-w64-mingw32/13-win32/include/c++/bits/shared_ptr.h \
+ /usr/lib/gcc/x86_64-w64-mingw32/13-win32/include/c++/bits/shared_ptr_base.h \
+ /usr/lib/gcc/x86_64-w64-mingw32/13-win32/include/c++/bits/allocated_ptr.h \
+ /usr/lib/gcc/x86_64-w64-mingw32/13-win32/include/c++/ext/aligned_buffer.h \
+ /usr/lib/gcc/x86_64-w64-mingw32/13-win32/include/c++/ext/concurrence.h \
+ /usr/lib/gcc/x86_64-w64-mingw32/13-win32/include/c++/bits/shared_ptr_atomic.h \
+ /usr/lib/gcc/x86_64-w64-mingw32/13-win32/include/c++/bits/atomic_base.h \
+ /usr/lib/gcc/x86_64-w64-mingw32/13-win32/include/c++/bits/atomic_lockfree_defines.h \
+ /usr/lib/gcc/x86_64-w64-mingw32/13-win32/include/c++/backward/auto_ptr.h \
+ /usr/lib/gcc/x86_64-w64-mingw32/13-win32/include/c++/pstl/glue_memory_defs.h \
+ /usr/lib/gcc/x86_64-w64-mingw32/13-win32/include/c++/pstl/execution_defs.h \
+ /home/q/maze/Maze.hpp \
+ /usr/lib/gcc/x86_64-w64-mingw32/13-win32/include/c++/stack \
+ /usr/lib/gcc/x86_64-w64-mingw32/13-win32/include/c++/deque \
+ /usr/lib/gcc/x86_64-w64-mingw32/13-win32/include/c++/bits/stl_deque.h \
+ /usr/lib/gcc/x86_64-w64-mingw32/13-win32/include/c++/bits/deque.tcc \
+ /usr/lib/gcc/x86_64-w64-mingw32/13-win32/include/c++/bits/stl_stack.h \
  /usr/lib/gcc/x86_64-w64-mingw32/13-win32/include/c++/chrono \
  /usr/lib/gcc/x86_64-w64-mingw32/13-win32/include/c++/bits/chrono.h \
  /usr/lib/gcc/x86_64-w64-mingw32/13-win32/include/c++/ratio \
  /usr/lib/gcc/x86_64-w64-mingw32/13-win32/include/c++/cstdint \
- /usr/lib/gcc/x86_64-w64-mingw32/13-win32/include/stdint.h \
- /usr/share/mingw-w64/include/stdint.h \
  /usr/lib/gcc/x86_64-w64-mingw32/13-win32/include/c++/limits \
  /usr/lib/gcc/x86_64-w64-mingw32/13-win32/include/c++/ctime \
  /usr/share/mingw-w64/include/time.h \
@@ -163,7 +184,6 @@ CMakeFiles/MazeGame.dir/Interface.cpp.obj: /home/q/maze/Interface.cpp \
  /usr/lib/gcc/x86_64-w64-mingw32/13-win32/include/c++/tr1/riemann_zeta.tcc \
  /usr/lib/gcc/x86_64-w64-mingw32/13-win32/include/c++/bits/random.h \
  /usr/lib/gcc/x86_64-w64-mingw32/13-win32/include/c++/vector \
- /usr/lib/gcc/x86_64-w64-mingw32/13-win32/include/c++/bits/stl_uninitialized.h \
  /usr/lib/gcc/x86_64-w64-mingw32/13-win32/include/c++/bits/stl_vector.h \
  /usr/lib/gcc/x86_64-w64-mingw32/13-win32/include/c++/bits/stl_bvector.h \
  /usr/lib/gcc/x86_64-w64-mingw32/13-win32/include/c++/bits/vector.tcc \
@@ -173,13 +193,6 @@ CMakeFiles/MazeGame.dir/Interface.cpp.obj: /home/q/maze/Interface.cpp \
  /usr/lib/gcc/x86_64-w64-mingw32/13-win32/include/c++/numeric \
  /usr/lib/gcc/x86_64-w64-mingw32/13-win32/include/c++/bits/stl_numeric.h \
  /usr/lib/gcc/x86_64-w64-mingw32/13-win32/include/c++/pstl/glue_numeric_defs.h \
- /usr/lib/gcc/x86_64-w64-mingw32/13-win32/include/c++/pstl/execution_defs.h \
- /usr/lib/gcc/x86_64-w64-mingw32/13-win32/include/c++/algorithm \
- /usr/lib/gcc/x86_64-w64-mingw32/13-win32/include/c++/bits/stl_algo.h \
- /usr/lib/gcc/x86_64-w64-mingw32/13-win32/include/c++/bits/algorithmfwd.h \
- /usr/lib/gcc/x86_64-w64-mingw32/13-win32/include/c++/bits/stl_heap.h \
- /usr/lib/gcc/x86_64-w64-mingw32/13-win32/include/c++/bits/stl_tempbuf.h \
- /usr/lib/gcc/x86_64-w64-mingw32/13-win32/include/c++/pstl/glue_algorithm_defs.h \
  /home/q/sfml-windows/SFML-2.6.1/include/SFML/Graphics.hpp \
  /home/q/sfml-windows/SFML-2.6.1/include/SFML/Window.hpp \
  /home/q/sfml-windows/SFML-2.6.1/include/SFML/System.hpp \
@@ -197,6 +210,11 @@ CMakeFiles/MazeGame.dir/Interface.cpp.obj: /home/q/maze/Interface.cpp \
  /home/q/sfml-windows/SFML-2.6.1/include/SFML/System/Sleep.hpp \
  /home/q/sfml-windows/SFML-2.6.1/include/SFML/System/String.hpp \
  /home/q/sfml-windows/SFML-2.6.1/include/SFML/System/Utf.hpp \
+ /usr/lib/gcc/x86_64-w64-mingw32/13-win32/include/c++/algorithm \
+ /usr/lib/gcc/x86_64-w64-mingw32/13-win32/include/c++/bits/stl_algo.h \
+ /usr/lib/gcc/x86_64-w64-mingw32/13-win32/include/c++/bits/algorithmfwd.h \
+ /usr/lib/gcc/x86_64-w64-mingw32/13-win32/include/c++/bits/stl_heap.h \
+ /usr/lib/gcc/x86_64-w64-mingw32/13-win32/include/c++/pstl/glue_algorithm_defs.h \
  /usr/lib/gcc/x86_64-w64-mingw32/13-win32/include/c++/locale \
  /usr/lib/gcc/x86_64-w64-mingw32/13-win32/include/c++/bits/locale_facets_nonio.h \
  /usr/lib/gcc/x86_64-w64-mingw32/13-win32/include/c++/x86_64-w64-mingw32/bits/time_members.h \
@@ -256,7 +274,6 @@ CMakeFiles/MazeGame.dir/Interface.cpp.obj: /home/q/maze/Interface.cpp \
  /home/q/sfml-windows/SFML-2.6.1/include/SFML/Graphics/Image.hpp \
  /usr/lib/gcc/x86_64-w64-mingw32/13-win32/include/c++/map \
  /usr/lib/gcc/x86_64-w64-mingw32/13-win32/include/c++/bits/stl_tree.h \
- /usr/lib/gcc/x86_64-w64-mingw32/13-win32/include/c++/ext/aligned_buffer.h \
  /usr/lib/gcc/x86_64-w64-mingw32/13-win32/include/c++/bits/node_handle.h \
  /usr/lib/gcc/x86_64-w64-mingw32/13-win32/include/c++/bits/stl_map.h \
  /usr/lib/gcc/x86_64-w64-mingw32/13-win32/include/c++/bits/stl_multimap.h \

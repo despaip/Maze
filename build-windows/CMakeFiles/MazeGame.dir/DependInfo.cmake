@@ -10,7 +10,6 @@ set(CMAKE_DEPENDS_LANGUAGES
 set(CMAKE_DEPENDS_DEPENDENCY_FILES
   "/home/q/maze/Interface.cpp" "CMakeFiles/MazeGame.dir/Interface.cpp.obj" "gcc" "CMakeFiles/MazeGame.dir/Interface.cpp.obj.d"
   "/home/q/maze/Maze.cpp" "CMakeFiles/MazeGame.dir/Maze.cpp.obj" "gcc" "CMakeFiles/MazeGame.dir/Maze.cpp.obj.d"
-  "/home/q/maze/Stack.cpp" "CMakeFiles/MazeGame.dir/Stack.cpp.obj" "gcc" "CMakeFiles/MazeGame.dir/Stack.cpp.obj.d"
   "/home/q/maze/main.cpp" "CMakeFiles/MazeGame.dir/main.cpp.obj" "gcc" "CMakeFiles/MazeGame.dir/main.cpp.obj.d"
   )
 

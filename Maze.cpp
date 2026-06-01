@@ -1,39 +1,39 @@
 #include "Maze.hpp"
 
-Maze::Maze(int height, int width) : height(height), width(width),  rng(static_cast<unsigned>(std::chrono::steady_clock::now().time_since_epoch().count())) {
-        grid = new Cell*[height];
-        for (int i = 0; i < height; ++i) {
-            grid[i] = new Cell[width];
-        }
+Maze::Maze(int height, int width)
+    : height(height),
+      width(width),
+      grid(nullptr),
+      rng(static_cast<unsigned>(std::chrono::steady_clock::now().time_since_epoch().count())) {
+    grid = new Cell*[height];
+    for (int i = 0; i < height; ++i) {
+        grid[i] = new Cell[width];
+    }
 }
 
 Maze::~Maze() {
     for (int i = 0; i < height; ++i) {
         delete[] grid[i];
     }
-
     delete[] grid;
 }
 
-bool Maze::isValidCoordinates(int x, int y) {
-    return (x >= 0 && y >= 0 && x < width && y < height);
+bool Maze::isValidCoordinates(int x, int y) const {
+    return x >= 0 && y >= 0 && x < width && y < height;
 }
 
-int Maze::findUnvisitedNeighbours(int x , int y, Position* unvisitedNeighbours) {
+int Maze::findUnvisitedNeighbours(int x, int y, Position* unvisitedNeighbours) {
     int cnt = 0;
 
     if (isValidCoordinates(x - 1, y) && !grid[y][x - 1].visited) {
         unvisitedNeighbours[cnt++] = {x - 1, y};
     }
-
     if (isValidCoordinates(x, y - 1) && !grid[y - 1][x].visited) {
         unvisitedNeighbours[cnt++] = {x, y - 1};
     }
-
     if (isValidCoordinates(x + 1, y) && !grid[y][x + 1].visited) {
         unvisitedNeighbours[cnt++] = {x + 1, y};
     }
-
     if (isValidCoordinates(x, y + 1) && !grid[y + 1][x].visited) {
         unvisitedNeighbours[cnt++] = {x, y + 1};
     }
@@ -68,7 +68,7 @@ void Maze::generateMaze(int startX, int startY) {
     stack.push({startX, startY});
     grid[startY][startX].visited = true;
 
-    while(!stack.empty()) {
+    while (!stack.empty()) {
         Position current = stack.top();
         Position unvisitedNeighbours[4];
 
@@ -92,8 +92,6 @@ void Maze::drawWall(sf::RenderWindow& window, float x, float y, float width, flo
 }
 
 void Maze::show(sf::RenderWindow& window, Position player) const {
-    window.clear(sf::Color(245, 245, 245));
-
     sf::RectangleShape start({kCellSize, kCellSize});
     start.setPosition(kWallSize, kWallSize);
     start.setFillColor(sf::Color(140, 210, 140));
@@ -134,34 +132,35 @@ void Maze::show(sf::RenderWindow& window, Position player) const {
         static_cast<float>(player.y * kCellSize + kCellSize * 0.18f)
     );
     window.draw(playerShape);
-
-    window.display();
 }
 
- bool Maze::canMove(Position pos, char direction) const {
-        switch (direction) {
-            case 'w': return !grid[pos.y][pos.x].isShowTopWall;
-            case 'd': return !grid[pos.y][pos.x].isShowRightWall;
-            case 's': return !grid[pos.y][pos.x].isShowBottomWall;
-            case 'a': return !grid[pos.y][pos.x].isShowLeftWall;
-            default: return false;
-        }
+bool Maze::canMove(Position pos, char direction) const {
+    switch (direction) {
+        case 'w': return !grid[pos.y][pos.x].isShowTopWall;
+        case 'd': return !grid[pos.y][pos.x].isShowRightWall;
+        case 's': return !grid[pos.y][pos.x].isShowBottomWall;
+        case 'a': return !grid[pos.y][pos.x].isShowLeftWall;
+        default: return false;
+    }
 }
 
 Position Maze::move(Position pos, char direction) const {
-        if (!canMove(pos, direction)) return pos;
-
-        switch (direction) {
-            case 'w': pos.y--; break;
-            case 'd': pos.x++; break;
-            case 's': pos.y++; break;
-            case 'a': pos.x--; break;
-        }
+    if (!canMove(pos, direction)) {
         return pos;
+    }
+
+    switch (direction) {
+        case 'w': --pos.y; break;
+        case 'd': ++pos.x; break;
+        case 's': ++pos.y; break;
+        case 'a': --pos.x; break;
+        default: break;
+    }
+    return pos;
 }
 
 bool Maze::isExit(Position pos) const {
-        return pos.x == width - 1 && pos.y == height - 1;
+    return pos.x == width - 1 && pos.y == height - 1;
 }
 
 int Maze::getHeight() const {
