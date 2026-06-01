@@ -515,6 +515,7 @@ CMakeFiles/MazeGame.dir/Maze.cpp.o: /home/q/maze/Maze.cpp \
   /usr/include/c++/13/bits/stl_multimap.h \
   /usr/include/c++/13/bits/stl_numeric.h \
   /usr/include/c++/13/bits/stl_pair.h \
+  /usr/include/c++/13/bits/stl_queue.h \
   /usr/include/c++/13/bits/stl_stack.h \
   /usr/include/c++/13/bits/stl_tempbuf.h \
   /usr/include/c++/13/bits/stl_tree.h \
@@ -566,6 +567,7 @@ CMakeFiles/MazeGame.dir/Maze.cpp.o: /home/q/maze/Maze.cpp \
   /usr/include/c++/13/pstl/glue_algorithm_defs.h \
   /usr/include/c++/13/pstl/glue_numeric_defs.h \
   /usr/include/c++/13/pstl/pstl_config.h \
+  /usr/include/c++/13/queue \
   /usr/include/c++/13/random \
   /usr/include/c++/13/ratio \
   /usr/include/c++/13/stack \
@@ -1079,6 +1081,8 @@ CMakeFiles/MazeGame.dir/main.cpp.o: /home/q/maze/main.cpp \
 
 /home/q/maze/main.cpp:
 
+/usr/include/c++/13/bits/stl_queue.h:
+
 /home/q/maze/Maze.cpp:
 
 /usr/lib/gcc/x86_64-linux-gnu/13/include/stdint.h:
@@ -1560,6 +1564,8 @@ CMakeFiles/MazeGame.dir/main.cpp.o: /home/q/maze/main.cpp \
 /usr/include/c++/13/bits/localefwd.h:
 
 /usr/include/SFML/System/ThreadLocal.hpp:
+
+/usr/include/c++/13/queue:
 
 /usr/include/SFML/Graphics/Shader.hpp:
 

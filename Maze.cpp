@@ -1,10 +1,14 @@
 #include "Maze.hpp"
 
+#include <queue>
+#include <vector>
+
 Maze::Maze(int height, int width)
     : height(height),
       width(width),
       grid(nullptr),
-      rng(static_cast<unsigned>(std::chrono::steady_clock::now().time_since_epoch().count())) {
+      rng(static_cast<unsigned>(std::chrono::steady_clock::now().time_since_epoch().count())),
+      exit{width - 1, height - 1} {
     grid = new Cell*[height];
     for (int i = 0; i < height; ++i) {
         grid[i] = new Cell[width];
@@ -62,26 +66,91 @@ void Maze::removeWall(Position a, Position b) {
     }
 }
 
-void Maze::generateMaze(int startX, int startY) {
-    std::stack<Position> stack;
+void Maze::updateExitPosition(Position start) {
+    std::vector<std::vector<int>> distance(height, std::vector<int>(width, -1));
+    std::queue<Position> queue;
 
-    stack.push({startX, startY});
-    grid[startY][startX].visited = true;
+    distance[start.y][start.x] = 0;
+    queue.push(start);
+    exit = start;
 
-    while (!stack.empty()) {
-        Position current = stack.top();
-        Position unvisitedNeighbours[4];
+    const char directions[4] = {'w', 'd', 's', 'a'};
 
-        int numberOfNeighbours = findUnvisitedNeighbours(current.x, current.y, unvisitedNeighbours);
-        if (numberOfNeighbours != 0) {
-            Position next = unvisitedNeighbours[0];
-            removeWall(current, next);
-            stack.push(next);
-            grid[next.y][next.x].visited = true;
-        } else {
-            stack.pop();
+    while (!queue.empty()) {
+        Position current = queue.front();
+        queue.pop();
+
+        if (distance[current.y][current.x] > distance[exit.y][exit.x]) {
+            exit = current;
+        }
+
+        for (char direction : directions) {
+            Position next = move(current, direction);
+            if (next.x == current.x && next.y == current.y) {
+                continue;
+            }
+            if (distance[next.y][next.x] != -1) {
+                continue;
+            }
+
+            distance[next.y][next.x] = distance[current.y][current.x] + 1;
+            queue.push(next);
         }
     }
+}
+
+void Maze::generateMaze(int startX, int startY) {
+    struct Edge {
+        Position from;
+        Position to;
+    };
+
+    std::vector<Edge> frontier;
+
+    auto addFrontier = [&](Position cell) {
+        const Position neighbours[4] = {
+            {cell.x - 1, cell.y},
+            {cell.x, cell.y - 1},
+            {cell.x + 1, cell.y},
+            {cell.x, cell.y + 1}
+        };
+
+        for (Position next : neighbours) {
+            if (isValidCoordinates(next.x, next.y) &&
+                !grid[next.y][next.x].visited) {
+                frontier.push_back({cell, next});
+            }
+        }
+    };
+
+    Position start{startX, startY};
+
+    grid[start.y][start.x].visited = true;
+    addFrontier(start);
+
+    while (!frontier.empty()) {
+        std::uniform_int_distribution<int> dist(
+            0,
+            static_cast<int>(frontier.size()) - 1
+        );
+
+        int index = dist(rng);
+
+        Edge edge = frontier[index];
+        frontier.erase(frontier.begin() + index);
+
+        if (grid[edge.to.y][edge.to.x].visited) {
+            continue;
+        }
+
+        removeWall(edge.from, edge.to);
+
+        grid[edge.to.y][edge.to.x].visited = true;
+
+        addFrontier(edge.to);
+    }
+
+    updateExitPosition({startX, startY});
 }
 
 void Maze::drawWall(sf::RenderWindow& window, float x, float y, float width, float height) const {
@@ -99,8 +168,8 @@ void Maze::show(sf::RenderWindow& window, Position player) const {
 
     sf::RectangleShape finish({kCellSize, kCellSize});
     finish.setPosition(
-        static_cast<float>((width - 1) * kCellSize + kWallSize),
-        static_cast<float>((height - 1) * kCellSize + kWallSize)
+        static_cast<float>(exit.x * kCellSize + kWallSize),
+        static_cast<float>(exit.y * kCellSize + kWallSize)
     );
     finish.setFillColor(sf::Color(230, 120, 120));
     window.draw(finish);
@@ -160,7 +229,7 @@ Position Maze::move(Position pos, char direction) const {
 }
 
 bool Maze::isExit(Position pos) const {
-    return pos.x == width - 1 && pos.y == height - 1;
+    return pos.x == exit.x && pos.y == exit.y;
 }
 
 int Maze::getHeight() const {

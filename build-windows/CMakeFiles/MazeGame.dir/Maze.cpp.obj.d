@@ -271,4 +271,6 @@ CMakeFiles/MazeGame.dir/Maze.cpp.obj: /home/q/maze/Maze.cpp \
  /home/q/sfml-windows/SFML-2.6.1/include/SFML/Graphics/Glsl.inl \
  /home/q/sfml-windows/SFML-2.6.1/include/SFML/Graphics/Sprite.hpp \
  /home/q/sfml-windows/SFML-2.6.1/include/SFML/Graphics/Text.hpp \
- /home/q/sfml-windows/SFML-2.6.1/include/SFML/Graphics/VertexBuffer.hpp
+ /home/q/sfml-windows/SFML-2.6.1/include/SFML/Graphics/VertexBuffer.hpp \
+ /usr/lib/gcc/x86_64-w64-mingw32/13-win32/include/c++/queue \
+ /usr/lib/gcc/x86_64-w64-mingw32/13-win32/include/c++/bits/stl_queue.h

@@ -7,7 +7,7 @@
 #include <SFML/Graphics.hpp>
 
 const int kBaseMazeWidth = 20;
-const int kBaseMazeHeight = 5;
+const int kBaseMazeHeight = 7;
 const int kLevelSizeStep = 5;
 const int kMaxLevel = 5;
 const int kCellSize = 32;
@@ -32,11 +32,13 @@ private:
     int width;
     Cell** grid;
     std::mt19937 rng;
+    Position exit;
 
     bool isValidCoordinates(int x, int y) const;
     int findUnvisitedNeighbours(int x, int y, Position* unvisitedNeighbours);
     void removeWall(Position a, Position b);
     bool canMove(Position pos, char direction) const;
+    void updateExitPosition(Position start);
     void drawWall(sf::RenderWindow& window, float x, float y, float width, float height) const;
 
 public:
