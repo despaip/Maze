@@ -35,7 +35,6 @@ private:
     Position exit;
 
     bool isValidCoordinates(int x, int y) const;
-    int findUnvisitedNeighbours(int x, int y, Position* unvisitedNeighbours);
     void removeWall(Position a, Position b);
     bool canMove(Position pos, char direction) const;
     void updateExitPosition(Position start);

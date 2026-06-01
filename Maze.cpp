@@ -26,26 +26,6 @@ bool Maze::isValidCoordinates(int x, int y) const {
     return x >= 0 && y >= 0 && x < width && y < height;
 }
 
-int Maze::findUnvisitedNeighbours(int x, int y, Position* unvisitedNeighbours) {
-    int cnt = 0;
-
-    if (isValidCoordinates(x - 1, y) && !grid[y][x - 1].visited) {
-        unvisitedNeighbours[cnt++] = {x - 1, y};
-    }
-    if (isValidCoordinates(x, y - 1) && !grid[y - 1][x].visited) {
-        unvisitedNeighbours[cnt++] = {x, y - 1};
-    }
-    if (isValidCoordinates(x + 1, y) && !grid[y][x + 1].visited) {
-        unvisitedNeighbours[cnt++] = {x + 1, y};
-    }
-    if (isValidCoordinates(x, y + 1) && !grid[y + 1][x].visited) {
-        unvisitedNeighbours[cnt++] = {x, y + 1};
-    }
-
-    std::shuffle(unvisitedNeighbours, unvisitedNeighbours + cnt, rng);
-    return cnt;
-}
-
 void Maze::removeWall(Position a, Position b) {
     if (a.x == b.x) {
         if (a.y > b.y) {
@@ -148,6 +128,47 @@ void Maze::generateMaze(int startX, int startY) {
         grid[edge.to.y][edge.to.x].visited = true;
 
         addFrontier(edge.to);
+    }
+
+    const int extraPassages = std::max(1, width * height / 30);
+    std::uniform_int_distribution<int> xDist(0, width - 1);
+    std::uniform_int_distribution<int> yDist(0, height - 1);
+    std::uniform_int_distribution<int> directionDist(0, 3);
+
+    int createdPassages = 0;
+    int attempts = 0;
+    const int maxAttempts = extraPassages * 20;
+
+    while (createdPassages < extraPassages && attempts < maxAttempts) {
+        ++attempts;
+
+        Position current{xDist(rng), yDist(rng)};
+        Position next = current;
+
+        switch (directionDist(rng)) {
+            case 0: --next.x; break;
+            case 1: --next.y; break;
+            case 2: ++next.x; break;
+            case 3: ++next.y; break;
+            default: break;
+        }
+
+        if (!isValidCoordinates(next.x, next.y)) {
+            continue;
+        }
+
+        const bool wallExists =
+            (current.x == next.x && current.y > next.y && grid[current.y][current.x].isShowTopWall) ||
+            (current.x == next.x && current.y < next.y && grid[current.y][current.x].isShowBottomWall) ||
+            (current.y == next.y && current.x > next.x && grid[current.y][current.x].isShowLeftWall) ||
+            (current.y == next.y && current.x < next.x && grid[current.y][current.x].isShowRightWall);
+
+        if (!wallExists) {
+            continue;
+        }
+
+        removeWall(current, next);
+        ++createdPassages;
     }
 
     updateExitPosition({startX, startY});
